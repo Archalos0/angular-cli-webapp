@@ -4,7 +4,9 @@ exports.config = {
      browserName: 'chrome'
    },
    baseUrl: 'http://localhost:8080',
-   specs: ['e2e/test.spec.ts'],
+   specs: [
+     'test.spec.ts'
+    ],
    onPrepare: () => {
   if (process.env.IS_JENKINS) {
        let jasmineReporters = require('jasmine-reporters');
@@ -15,7 +17,7 @@ exports.config = {
        jasmine.getEnv().addReporter(junitReporter);
      }
      require('ts-node').register({
-       project: 'e2e'
+      //  project: 'e2e'
      });
    },
  };
